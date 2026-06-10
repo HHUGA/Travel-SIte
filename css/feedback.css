@@ -1,0 +1,25 @@
+.faq-card, .feedback-form-card { background-color: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 30px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
+.faq-subtext { font-size: 0.85rem; margin-bottom: 20px; color: var(--text-muted); }
+.accordion-container { display: flex; flex-direction: column; gap: 12px; }
+.accordion-item { border-bottom: 1px solid var(--border); }
+.accordion-item:last-child { border-bottom: none; }
+.accordion-header { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 14px 0; background: none; border: none; cursor: pointer; text-align: left; gap: 14px; }
+.accordion-header h4 { font-size: 0.95rem; font-weight: 700; color: var(--text-main); transition: var(--transition); }
+.accordion-header:hover h4 { color: var(--primary); }
+.accordion-icon { font-size: 1.1rem; color: var(--text-muted); transition: var(--transition); }
+.accordion-item.active .accordion-icon { transform: rotate(45deg); color: var(--primary); }
+.accordion-content { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.3s ease; }
+.accordion-item.active .accordion-content { max-height: 180px; opacity: 1; padding-bottom: 14px; }
+.accordion-content p { font-size: 0.85rem; color: var(--text-muted); }
+
+.error-msg { display: none; color: var(--error); font-size: 0.75rem; font-weight: 600; margin-top: 4px; }
+.form-control.invalid { border-color: var(--error) !important; box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important; }
+.form-control.invalid + .error-msg { display: block; }
+.form-control.valid { border-color: var(--success) !important; box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.08) !important; }
+.success-overlay { text-align: center; padding: 30px 10px; display: flex; flex-direction: column; align-items: center; gap: 16px; animation: zoomIn 0.3s ease forwards; }
+@keyframes zoomIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+.success-icon { width: 60px; height: 60px; background-color: rgba(16, 185, 129, 0.08); color: var(--success); font-size: 2rem; font-weight: 700; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; }
+
+@media (max-width: 768px) {
+  .faq-card, .feedback-form-card { padding: 20px; }
+}
