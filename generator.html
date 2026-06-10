@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    (function() {
+      if (localStorage.getItem('tn_theme') === 'dark') {
+        document.documentElement.classList.add('dark-theme');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise Me - TravelNest Random Trip Generator</title>
+  <meta name="description" content="Choose your travel style preferences, spin the surprise roulette, enjoy visual cycles animations, and collect items into wishlists.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/generator.css">
+</head>
+<body>
+
+  <header id="global-header"></header>
+
+  <main class="container page-content">
+    <section class="generator-header reveal">
+      <span class="section-subtitle">Wanderlust Roulette</span>
+      <h2 class="section-title">Random Trip Generator</h2>
+      <p class="section-desc">Unsure where to vacation next? Select your preferred travel style and budget scale, spin the TravelNest reel, and let serendipity suggest your next ideal nest!</p>
+    </section>
+
+    <section class="generator-section">
+      <div class="selection-card reveal">
+        <form id="generator-form" class="generator-form-row">
+          <div class="form-group">
+            <label for="gen-type" class="form-label">Travel Style Style</label>
+            <select class="form-control" id="gen-type">
+              <option value="all">Any Travel Style</option>
+              <option value="adventure">Adventure & Outdoor</option>
+              <option value="relaxation">Relaxation & Beach</option>
+              <option value="cultural">History & Culture</option>
+              <option value="nature">Scenic Nature</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="gen-budget" class="form-label">Budget Scale Threshold</label>
+            <select class="form-control" id="gen-budget">
+              <option value="all">Any Budget Scale</option>
+              <option value="low">Low Budget ($)</option>
+              <option value="medium">Medium Budget ($$)</option>
+              <option value="high">High Budget ($$$)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-generate" id="spin-btn">Surprise Me! 🎲</button>
+        </form>
+      </div>
+
+      <div class="generator-stage reveal">
+        <div class="generator-reel" id="generator-reel">
+          <div class="reel-placeholder">
+            <div class="roulette-icon">🔮</div>
+            <h3>Serendipity Slot Machine</h3>
+            <p class="section-desc" style="margin-bottom:0; max-width:320px;">Pick your preferences above and click the button to spin the Destination slots!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wishlist-section reveal">
+      <div style="margin-bottom: 24px;">
+        <span class="section-subtitle">Personal Wishlist</span>
+        <h2 class="section-title">Your Travel Wishlist</h2>
+        <p class="section-desc">Hand-picked nests saved during your explorer or roulette runs. Saved safely offline.</p>
+      </div>
+
+      <div class="grid-cards" id="wishlist-grid">
+        <div class="wishlist-empty">
+          <div class="wishlist-empty-icon">♥</div>
+          <h3>Your wishlist is empty</h3>
+          <p class="section-desc" style="margin: 0;">Spin the generator above or click destination hearts to collect items here!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="global-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/generator.js"></script>
+</body>
+</html>
