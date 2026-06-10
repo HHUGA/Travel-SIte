@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    (function() {
+      if (localStorage.getItem('tn_theme') === 'dark') {
+        document.documentElement.classList.add('dark-theme');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Mood - TravelNest Sound Board</title>
+  <meta name="description" content="Synthesize relaxing shoreline waves, rainy forests wind, or city hums, and trace plan/visited checklist logs offline.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mood.css">
+</head>
+<body>
+
+  <header id="global-header"></header>
+
+  <main class="container page-content">
+    <section class="mood-header reveal">
+      <span class="section-subtitle">Mindful Escapes</span>
+      <h2 class="section-title">Travel Mood Board</h2>
+      <p class="section-desc">Immerse yourself in global travel vibes. Tune in to customized ambient waves synthesized in real-time right inside your browser, and track your conquered or planned journeys.</p>
+    </section>
+
+    <section class="soundboard-section reveal">
+      <h3 style="margin-bottom:8px;">Ambient Synthesizer Mix</h3>
+      <p class="soundboard-desc">Synthesized in real-time directly in code using the HTML5 **Web Audio API**—no heavy audio downloads required! Tweak and mix volumes together.</p>
+      
+      <div class="sound-grid">
+        <div class="sound-card" id="sound-beach">
+          <div class="sound-icon">🏖️</div>
+          <div class="sound-info">
+            <h4>Sunny Shoreline</h4>
+            <p>Lowpass filtered waves modulated dynamically over an 8-second cycle</p>
+          </div>
+          <div class="sound-controls">
+            <button class="btn btn-secondary play-sound-btn" data-sound="beach">Play Beach</button>
+            <div class="vol-slider-group">
+              <span>🔈</span>
+              <input type="range" class="vol-slider" data-sound="beach" min="0" max="1" step="0.05" value="0.5" aria-label="Beach Volume">
+              <span>🔊</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sound-card" id="sound-forest">
+          <div class="sound-icon">🌲</div>
+          <div class="sound-info">
+            <h4>Forest Wind & Rain</h4>
+            <p>Narrow bandpass rustling gusts combined with rain pitters & bird whistles</p>
+          </div>
+          <div class="sound-controls">
+            <button class="btn btn-secondary play-sound-btn" data-sound="forest">Play Forest</button>
+            <div class="vol-slider-group">
+              <span>🔈</span>
+              <input type="range" class="vol-slider" data-sound="forest" min="0" max="1" step="0.05" value="0.5" aria-label="Forest Volume">
+              <span>🔊</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sound-card" id="sound-city">
+          <div class="sound-icon">🏙️</div>
+          <div class="sound-info">
+            <h4>Metropolitan Hum</h4>
+            <p>Low tri-frequency sub traffic hum overlaying far-off triangle beeping horns</p>
+          </div>
+          <div class="sound-controls">
+            <button class="btn btn-secondary play-sound-btn" data-sound="city">Play City</button>
+            <div class="vol-slider-group">
+              <span>🔈</span>
+              <input type="range" class="vol-slider" data-sound="city" min="0" max="1" step="0.05" value="0.5" aria-label="City Volume">
+              <span>🔊</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tracker-section reveal">
+      <div style="margin-bottom: 24px;">
+        <span class="section-subtitle">Travel Journal Tracker</span>
+        <h2 class="section-title">Your Conquered & Planned Maps</h2>
+        <p class="section-desc">Mark destinations as 'Visited' or 'Planned' to track your travel accomplishments offline.</p>
+      </div>
+
+      <div class="grid-cards" id="tracker-grid">
+        <div class="spinner-box">
+          <div class="spinner"></div>
+          <p>Mapping log pins...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="global-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/mood.js"></script>
+</body>
+</html>

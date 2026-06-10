@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    (function() {
+      if (localStorage.getItem('tn_theme') === 'dark') {
+        document.documentElement.classList.add('dark-theme');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ & Support - TravelNest Help Desk</title>
+  <meta name="description" content="Resolve queries instantly via our collapsible support FAQ accordion, or leave message feedback stored locally.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/feedback.css">
+</head>
+<body>
+
+  <header id="global-header"></header>
+
+  <main class="container page-content">
+    <section class="feedback-header reveal">
+      <span class="section-subtitle">Customer Care</span>
+      <h2 class="section-title">Support & FAQ Accordion</h2>
+      <p class="section-desc">Have questions about travel forecasts, PWA caches, or ambient audio configurations? Consult our FAQ Collapsible Accordion below, or submit an offline inquiry form.</p>
+    </section>
+
+    <section class="grid-2" style="align-items: stretch; margin-top:20px;">
+      <div class="faq-card reveal">
+        <h3 style="margin-bottom:8px;">Frequently Asked Questions</h3>
+        <p class="faq-subtext">Click on any question below to expand answers dynamically.</p>
+        
+        <div class="accordion-container" id="faq-accordion">
+          <div class="spinner-box">
+            <div class="spinner"></div>
+            <p>Collapsing FAQ entries...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="feedback-form-card reveal" id="feedback-form-container">
+        <div class="form-panel" id="form-panel">
+          <h3 style="margin-bottom:8px;">Submit support feedback</h3>
+          <p class="faq-subtext" style="margin-bottom:20px;">We monitor submissions offline inside your local storage logs.</p>
+          
+          <form id="support-form" novalidate>
+            <div class="form-group">
+              <label for="fb-name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="fb-name" placeholder="Enter your name (Min 2 letters)" required pattern="[a-zA-Z ]{2,}">
+              <span class="error-msg">Please enter a valid name (letters & spaces only, min 2 characters).</span>
+            </div>
+
+            <div class="form-group">
+              <label for="fb-email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="fb-email" placeholder="Enter your email (e.g. user@domain.com)" required>
+              <span class="error-msg">Please enter a valid email address.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="fb-message" class="form-label">Support Message</label>
+              <textarea class="form-control" id="fb-message" rows="4" placeholder="Type comments here (Min 15 characters)..." required minlength="15"></textarea>
+              <span class="error-msg">Message must be at least 15 characters long.</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Submit Feedback Form</button>
+          </form>
+        </div>
+
+        <div class="success-overlay hide" id="success-overlay">
+          <div class="success-icon">✓</div>
+          <h3>Inquiry Lodged!</h3>
+          <p class="section-desc" style="margin-bottom:0;">Thank you for writing to TravelNest support! Your submission logs have been securely filed in this device's local repository offline.</p>
+          <button class="btn btn-secondary" id="submit-another-btn">Submit another response</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="global-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/feedback.js"></script>
+</body>
+</html>
